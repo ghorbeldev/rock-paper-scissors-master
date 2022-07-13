@@ -1,0 +1,34 @@
+@use '../../scss/abstracts/' as *;
+.guns {
+	width: 313px;
+	height: 287px;
+	margin: auto;
+	background-image: url(../../assets/images/bg-triangle.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: relative;
+	@include mobile {
+		background-size: 100% 100%;
+		width: 220px;
+		height: 236px;
+	}
+	.gun {
+		--collapse: 1rem;
+		position: absolute;
+		&:nth-of-type(1) {
+			top: var(--collapse, 0);
+			left: var(--collapse, 0);
+			transform: translate(-50%, -50%);
+		}
+		&:nth-of-type(2) {
+			top: var(--collapse, 0);
+			right: var(--collapse, 0);
+			transform: translate(50%, -50%);
+		}
+		&:nth-of-type(3) {
+			bottom: var(--collapse, 0);
+			left: 50%;
+			transform: translate(-50%, 50%);
+		}
+	}
+}
